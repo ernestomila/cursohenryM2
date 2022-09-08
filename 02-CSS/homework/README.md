@@ -4,9 +4,9 @@
 ---
 1. En un archivo de texto separado que debes crear, escribe explicaciones de los siguientes conceptos como si se lo estuvieras explicando a un niño de 12 años. Hacer esto te ayudará a descubrir rápidamente cualquier agujero en tu comprensión.
 
-	* Framework
-	* Preprocesador
-	* Responsive website
+	* Framework: Librerías que poseen herramientras ya programadas que te ayudan a ordenar y avanzar más rápido en la programación del código.
+	* Preprocesador: Es un interpretador de código corriendo en tiempo real e interpretando lo que escribes en sus archivos para procesarlos y transformarlo en el código standar y también se usa para guardar y utilizar constantes dentro del código. 
+	* Responsive website: Es un Stilo que le da visualización, vida y sentido a los sistemas y sitios webs que están enfocados a dispositivos móviles.
 
 
 2. Crear una Responsive Website según las siguientes indicaciones:

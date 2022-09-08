@@ -23,7 +23,6 @@ function ToDo (description) {
     this.complete = false;
 }
 
-
 // Agregar un método denominado 'completeToDo' al prototipo de la clase ToDo
 // No requiere ningún argumento
 // Debe setear el atributo 'complete' del ToDo en true
@@ -51,7 +50,6 @@ ToDo.prototype.completeToDo = function () {
 //    7) Agregar 'toDoText' como hijo de 'toDoShell'
 //    8) Devolver la variable toDoShell
 
-
 function buildToDo(todo, index) {
   // Tu código acá:
   //Div
@@ -62,25 +60,28 @@ function buildToDo(todo, index) {
   let toDoText = document.createElement('span');
   toDoText.innerHTML = todo.description;
 
+  let remove = document.createElement('i');
+  remove.id = 'r' + index;
+  remove.classList.add ('fa-solid', 'fa-trash');
+
   //ChecBox
   let checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
   checkbox.id = index;  
-  checkbox.className = 'completeCheckbox';
+  checkbox.classList.add ('completeCheckbox');
 
   if (todo.complete){
     toDoText.className = 'completeText';
     checkbox.checked = true;
   } else {
     toDoText.className = '';
-  }; 
+    checkbox.checked = false;
+  };
   
-  checkbox.addEventListener('click', function(event) {
-    completeToDo(event);
-  });
-
+  checkbox.addEventListener('click',completeToDo);
   toDoShell.appendChild (checkbox);
   toDoShell.appendChild (toDoText);
+  toDoShell.appendChild (remove);
   console.log(toDoShell);
   
   return toDoShell;
@@ -117,9 +118,8 @@ function displayToDos() {
   // Tu código acá:
   let toDoContainer = document.querySelector('#toDoContainer');
   toDoContainer.innerHTML = "";
-  console.log("Arr: ",toDoItems);
   let arr = buildToDos(toDoItems);
-  console.log("Resultado: ", arr);
+
   arr.forEach(element => {
     toDoContainer.append(element);
   }); 
@@ -127,16 +127,19 @@ function displayToDos() {
 
 
 // La función 'addToDo' agregará un nuevo ToDo al array 'toDoItems'
-// [NOTA: Algunas cuestiones a tener en cuenta sobre el elemento 'input' de HTML (Ya que 'toDoInput' es un input)
-// Todos los elementos input tienen una propiedad llamada 'value' que nos permite acceder al texto que se encuentre
-// actualmente escrito dentro del input]
-//  1) Crear un nuevo ToDo usando la clase ToDo y pasándole el valor del input 'toDoInput' como parámetro
+// [NOTA: Algunas cuestiones a tener en cuenta sobre el elemento 'input' de HTML (Ya que 
+// 'toDoInput' es un input)
+// Todos los elementos input tienen una propiedad llamada 'value' que nos permite acceder al 
+// texto que se encuentre actualmente escrito dentro del input]
+//  1) Crear un nuevo ToDo usando la clase ToDo y pasándole el valor del input 'toDoInput' 
+//  como parámetro
 //  2) Agregar el objeto ToDo recién creado al array toDoItems
 //  3) Setear el valor del input toDoInput como un string vacio ("") (Esto se realiza para que en la vista se borre lo que se encontraba escrito)
 //  4) Llamar a la función displayToDos para que se actualicen los toDos mostrados en pantalla
 
 function addToDo() {
   // Tu código acá:
+  // document.querySelector("#toDoInput").addEventListener('keypress', function(e){if (e.keyCode === 13){ addToDo() }})
   let toDoInput = document.getElementById('toDoInput');
   let toDoI = new ToDo(toDoInput.value);
   toDoItems.push(toDoI);
@@ -177,9 +180,8 @@ function completeToDo(event) {
   // DESCOMENTAR LA SIGUIENTE LINEA
   const index = event.target.id;
   // Tu código acá:
-  let element = document.getElementById(index);
-  toDoItems.push(event);
-  toDoItems[index].complete = true;
+  toDoItems[index].complete = toDoItems[index].complete ? false : true;
+  displayToDos();
 }
 
 // Una vez que llegaste a este punto verificá que todos los tests pasen
