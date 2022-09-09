@@ -64,9 +64,10 @@ app.get("/amigos/:id", function(req, res)  {
 });
 
 app.post("/amigos", (req, res) => {
+  console.log("Info: ", req.body)
   const friend = { id: getNewId(), ...req.body };
   amigos = [...amigos, friend];
-  res.status(201).json(amigos);
+  res.status(201).json(friend);
 });
 
 app.put("/amigos/:id", (req, res) => {

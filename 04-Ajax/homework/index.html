@@ -9,20 +9,28 @@
 </head>
 <body>
   <button id='boton'>Ver Amigos</button>
-  <ul id='lista'>
-  </ul>
-
   <h2>Ver Amigos</h2>
-  <img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif' />
-  <hr>
+    <img id="loading" style="display: none;" src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif' />
+  <ul id='lista' >
+  </ul> 
+  <br> 
+  <hr>  
   <input id='input'></input>
-  <button id='search'>Buscar</button>
+  <button id='search'>Search</button>
+  <img id="loadingSearch" style="display: none;width: 20px;vertical-align: middle;" src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif' />
   <span id='amigo'></span>
 
   <hr>
   <input id='inputDelete'></input>
   <button id='delete'>Delete</button>
+  <img id="loadingDelete" style="display: none;width: 20px;vertical-align: middle;" src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif' />
   <span id='success'></span>
+
+  <hr>
+  <input id='inputAdd'></input>
+  <button id='add'>Add</button>
+  <img id="loadingAdd" style="display: none;width: 20px;vertical-align: middle;" src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif' />
+  <span id='successAdd'></span> 
   <script src="index.js"></script>
 </body>
 </html>
