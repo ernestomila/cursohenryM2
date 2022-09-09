@@ -1,8 +1,20 @@
+function clear(){
+    $("#success").html('');
+    $("#successAdd").html('');
+    $("#amigo").html('');
+    //Inputs
+    $("#input").val('');
+    $("#inputDelete").val('');
+    $("#inputAdd").val('');
+    $("#edadAdd").val('');
+    $("#emailAdd").val('');
+}
 
 $("#boton").click(function(){
     let loading = $("#loading");
     let ul = $("#lista");
     ul.html('');
+    clear();
     loading.fadeIn("slow", function(){
         $.get('http://localhost:5000/amigos',function(data){
             loading.fadeOut("slow", function(){
@@ -22,7 +34,6 @@ $("#search").click(function(){
     let loading = $("#loadingSearch");
     let input = $("#input");
     let amigo = $("#amigo");
-    amigo.html('');
     loading.fadeIn("slow", function(){
         $.get('http://localhost:5000/amigos/' + input.val(),function(data){
             loading.fadeOut("slow", function(){
@@ -63,7 +74,7 @@ $("#delete").click(function(){
             loading.fadeOut("slow", function(){
                 success.html('Su  amigo NO existe');              
             }); 
-        });                        
+        });                          
     });
 })
 
@@ -71,18 +82,19 @@ $("#add").click(function(){
     //Su  amigo X fue borrado con éxito
     let loading = $("#loadingAdd");
     let input = $("#inputAdd");
+    let edadAdd = $("#edadAdd");
+    let emailAdd = $("#emailAdd");  
     let success = $("#successAdd");
-    success.html('');
     loading.fadeIn("slow", function(){
         $.ajax({
             url: 'http://localhost:5000/amigos/', 
             type: "POST",
             data: JSON.stringify({
                 name: input.val(),
-                age: "30",
-                email: "prueba@email.com"
+                age: edadAdd.val(),
+                email: emailAdd.val()
                 }),
-            success: function(data){
+            success: function(data){  
                     console.log(data);
                     let ul = $("#lista");
                     let li = $('<li></li>');
@@ -93,9 +105,10 @@ $("#add").click(function(){
                     loading.fadeOut("slow", function(){
                             success.fadeIn("slow", function(){
                                 ul.append(li);
-                                success.html('Su  amigo fue agregado con éxito');
+                                success.html('Su  amigo '+ data.name + ' fue agregado con éxito');
                             });            
-                        })           
+                        })
+                        clear();  
             },
             contentType: "application/json; charset=utf-8"
         }).fail(function(){
