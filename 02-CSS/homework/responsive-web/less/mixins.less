@@ -1,1 +1,16 @@
-// Mixins acá
+.btn(){
+    background-color: @btn-bg-color;
+    width: fit-content;
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+    color: @wild-sand;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+
+    &:hover {
+        background-color: lighten(@btn-bg-color, 25%);
+        color: @wild-sand;
+    }
+}// Mixins acá

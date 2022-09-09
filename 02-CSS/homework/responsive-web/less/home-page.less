@@ -1,6 +1,13 @@
 // Conteindo del Home
 
 .home {
+  .content-top {
+    margin: 10px 0;
+    .header-img{
+      border-radius: 15px;
+      max-width: calc(100vw - 16px);
+    }
+  }
 
   .intro {
 
@@ -28,11 +35,7 @@
   }
 
   .musica-nueva {
-    padding: 15px;
-
-    h3 {
-      margin-top: 11px;
-    }
+    padding: 10px;
 
     p {
       margin-top: 13px;
@@ -58,6 +61,7 @@
       }
 
       .btn {
+        .btn();
       }
     }
 
@@ -72,4 +76,32 @@
       }
     }
   }
+  @media @phone {
+    .header-img{
+      margin: 8px;
+    }
+    .tecnologia, .ondas {
+      display: none;
+    }
+    .music-images {
+        img {
+            width: calc(100vw - 16px);
+        }
+    }
+    .actual {
+      flex-direction: column-reverse;
+      padding: 8px;
+      .actual-img {
+        width: calc(100vw - 16px);
+        margin: 0;
+      }
+      .actual-text {
+        .btn {
+          width: 100%;
+          font-size: 18px;
+        }
+        width: 100%;
+      }
+    }
+  }  
 }
