@@ -1,6 +1,6 @@
-(function () {
+// (function () {
 
-  window.EventEmitter = EventEmitter;
+  // window.EventEmitter = EventEmitter;
 
   // our EventEmitter constructor function
   function EventEmitter () {
@@ -43,4 +43,6 @@
 
   };
 
-})();
+// })();
+// module.exports = EventEmitter; //ComonJS
+export default EventEmitter; //ES6
