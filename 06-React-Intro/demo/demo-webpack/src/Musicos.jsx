@@ -5,8 +5,10 @@ export default function Musicos({ musicos }) {
     return (
       <div>
         {
-          musicos.map(musico => (
-            <Musico name={musico.name} lastname={musico.lastname} band={musico.band} />
+          musicos.map((musico, index) => (
+            <Musico 
+            key={`${musico.name}|${musico.lastname}`}
+            name={musico.name} lastname={musico.lastname} band={musico.band} />
           ))
         }
       </div>

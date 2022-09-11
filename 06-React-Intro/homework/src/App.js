@@ -24,7 +24,7 @@ function App() {
         />
       </div>
       <hr />
-      <div>
+      <div className="searchBarTop">
         <SearchBar
           onSearch={(ciudad) => alert(ciudad)}
         />

@@ -28,6 +28,51 @@
   color: #61dafb;
 }
 
+.cardList {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card{
+  width: 290px;
+  display: inline-flex;
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+
+.sectionCard {
+  display: flex; 
+  justify-content: space-around;
+}
+
+.sectionCard img {
+  width:100px;
+  height: 100px; 
+  margin-top: -30px;
+}
+
+.me-2 {
+  width: 150px;
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 10px;
+}
+
+.searchBar {
+  width: 300px;
+  background-color: gray;
+  padding: 10px;
+}
+
+.searchBarTop {
+  text-align: -webkit-center;
+}
+
+.btn-danger{
+  width: 40px; 
+  align-self: end; 
+  margin: 10px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

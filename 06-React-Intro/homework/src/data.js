@@ -6,4 +6,17 @@ export const Denver = JSON.parse(`{"coord":{"lon":-0.13,"lat":51.51},"weather":[
 
 var cities = [Londres, Cairns, Denver];
 
+// coord
+// weather
+// base
+// main
+// visibility
+// wind
+// clouds
+// dt
+// sys
+// country
+// id
+// name
+// cod
 export default cities;
