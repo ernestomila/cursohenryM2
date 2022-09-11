@@ -1,4 +1,5 @@
 import React from 'react';
+import Temp from './Temp';
 
 export default function Card(props) {
   // acá va tu código
@@ -9,17 +10,9 @@ export default function Card(props) {
         <div>
           <h5 className="card-title">{props.name}</h5>
           <section className="sectionCard">
-            <div>
-              <h5 className="card-title">Min</h5>
-              <p className="card-text">{Math.floor(props.min) + "º"}</p>
-            </div>
-
-            <div>
-              <h5 className="card-title">Max</h5>
-              <p className="card-text">{Math.floor(props.max) + "º"}</p>
-            </div>
-
-            <img src={"http://openweathermap.org/img/wn/" + props.img + "@2x.png"}/>
+            <Temp label="Min" temp={props.min}/>
+            <Temp label="Max" temp={props.max}/>
+            <img src={`http://openweathermap.org/img/wn/${props.img}@2x.png`} alt="Icono del clima" title="Icono del clima"/>
           </section>
           
         </div>
