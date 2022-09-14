@@ -15,9 +15,7 @@ var traverseDomAndCollectElements = function(matchFunc, startEl) {
     var nodo = traverseDomAndCollectElements(matchFunc, startEl.children[i]);
     resultSet = resultSet.concat(nodo);
   }
-
   return resultSet;
-
 };
 
 // Detecta y devuelve el tipo de selector
@@ -38,6 +36,7 @@ var selectorTypeMatcher = function(selector) {
 // matchea el selector.
 var matchFunctionMaker = function(selector) {
   var selectorType = selectorTypeMatcher(selector);
+  //= "id"
   console.log('selectorType: ', selectorType)
   var matchFunction;
   if (selectorType === "id") { 
@@ -62,7 +61,7 @@ var matchFunctionMaker = function(selector) {
   return matchFunction;
 };
 
-var $ = function(selector) {
+var $ = function (selector) { // $("#maria")
   var elements;
   var selectorMatchFunc = matchFunctionMaker(selector);
   elements = traverseDomAndCollectElements(selectorMatchFunc);

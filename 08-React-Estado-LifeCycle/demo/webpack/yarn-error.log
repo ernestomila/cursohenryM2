@@ -1,0 +1,59 @@
+Arguments: 
+  /usr/local/Cellar/node/18.6.0/bin/node /usr/local/bin/yarn add react-route-dom
+
+PATH: 
+  /Users/macpro/Library/Python/3.8/bin:/usr/local/sbin:/Users/macpro/.config/composer/vendor/bin:/Users/macpro/.composer/vendor/bin:/opt/homebrew/opt/php@8.0/bin:/opt/homebrew/opt/php@8.0/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/macpro/Library/Python/3.8/bin:/usr/local/sbin:/Users/macpro/.config/composer/vendor/bin:/Users/macpro/.composer/vendor/bin:/opt/homebrew/opt/php@8.0/bin:/opt/homebrew/opt/php@8.0/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Users/macpro/fvm/versions/3.0.0/bin:/Users/macpro/fvm/versions/3.0.0/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.6.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/react-route-dom: Not found
+      at params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66145:18)
+      at self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "webpackDEMO",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "build": "webpack -w",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@babel/core": "^7.12.7",
+      "@babel/preset-env": "^7.12.7",
+      "@babel/preset-react": "^7.12.7",
+      "babel-loader": "^8.2.1",
+      "webpack": "^4.44.2",
+      "webpack-cli": "^3.3.12"
+    },
+    "dependencies": {
+      "react": "^16.14.0",
+      "react-dom": "^16.14.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
